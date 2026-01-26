@@ -37,8 +37,11 @@ catch {
 # Search for WebPortal URL with token
 $urlPattern = "WebPortal url: (https://ef-webview\.gryphline\.com[^\s]+u8_token=[^\s]+)"
 
-if ($logContent -match $urlPattern) {
-    $fullUrl = $matches[1]
+$allMatches = [regex]::Matches($logContent, "WebPortal url: (https://ef-webview\.gryphline\.com[^\s]+u8_token=[^\s]+)")
+
+if ($allMatches.Count -gt 0) {
+    $lastMatch = $allMatches[$allMatches.Count - 1]
+    $fullUrl = $lastMatch.Groups[1].Value
     Write-Host "Found gacha URL in log!" -ForegroundColor Green
     Write-Host ""
     
