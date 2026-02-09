@@ -1,7 +1,7 @@
 Add-Type -AssemblyName System.Web
 
 Write-Host "======================================" -ForegroundColor Cyan
-Write-Host "Endfield Gacha URL Extractor" -ForegroundColor Green
+Write-Host "Goyfield Gacha URL Extractor" -ForegroundColor Green
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -71,7 +71,7 @@ if ($allMatches.Count -gt 0) {
             }
         }
         catch {
-            Write-Host "Could not validate URL (might still work)" -ForegroundColor Yellow
+            Write-Host "Could not validate URL" -ForegroundColor Yellow
         }
         
         Write-Host ""
@@ -89,7 +89,7 @@ if ($allMatches.Count -gt 0) {
         # Copy API URL to clipboard
         Set-Clipboard -Value $apiUrl
         Write-Host "API URL copied to clipboard!" -ForegroundColor Green
-        Write-Host "You can paste it into your gacha tracker tool." -ForegroundColor Green
+        Write-Host "You can paste it into Goyfield." -ForegroundColor Green
     }
     else {
         Write-Host "Found URL but couldn't extract token!" -ForegroundColor Red
@@ -100,7 +100,7 @@ else {
     Write-Host "No gacha URL found in log file!" -ForegroundColor Red
     Write-Host ""
     Write-Host "Please:" -ForegroundColor Yellow
-    Write-Host "1. Open Endfield game" -ForegroundColor Yellow
+    Write-Host "1. Open Endfield" -ForegroundColor Yellow
     Write-Host "2. Go to gacha/summon screen" -ForegroundColor Yellow
     Write-Host "3. Open gacha history" -ForegroundColor Yellow
     Write-Host "4. Run this script again" -ForegroundColor Yellow
